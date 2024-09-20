@@ -12,7 +12,8 @@ app.get("/", (req, res) => {
   fs.writeFileSync(addCurrTime, currTime, "utf-8");
   fs.readFileSync(addCurrTime, "utf-8");
 
-  res.status(200).send(currTime);
+  res.status(200).send(`Current Timestamp: ${currTime}.
+    Go to /getFiles endpoint to get all the files`);
 });
 
 app.get("/getFiles", (req, res) => {
