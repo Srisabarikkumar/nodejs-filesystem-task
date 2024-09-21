@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 
 app.get("/", (req, res) => {
-  const currTime = format(new Date(), "dd-mm-yyyy-hh-mm-ss");
+  const currTime = format(new Date(), "dd-MM-yyyy-HH-mm-ss");
   const addCurrTime = path.join("Current-timestamp", `${currTime}.txt`);
 
   fs.writeFileSync(addCurrTime, currTime, "utf-8");
